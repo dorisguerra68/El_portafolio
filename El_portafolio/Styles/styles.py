@@ -1,6 +1,33 @@
 from enum import Enum
 
 
+class FontFamily(Enum):
+    TITLE = "'Emilys Candy', cursive"
+    SUBTITLE = "'Agbalumo', system-ui"
+    HEADING_3 = "'Chicle', serif"
+
+
+TITLE_STYLE = {
+    "font_family": FontFamily.TITLE.value,
+    "size": "9",
+    "weight": "bold",
+}
+
+
+SUBTITLE_STYLE = {
+    "font_family": FontFamily.SUBTITLE.value,
+    "size": "7",
+    "weight": "medium",
+}
+
+
+HEADING_3_STYLE = {
+    "font_family": FontFamily.HEADING_3.value,
+    "size": "5",
+    "weight": "normal",
+}
+
+
 class Size(Enum):
     VERY_SMALL = "0.5em"
     SMALL = "1em"
@@ -14,10 +41,10 @@ class Size(Enum):
 
 
 class Color(Enum):
-    TEXT_DARK = "#111827"
+    TEXT_DARK = "#1e2f5d"
     TEXT_MUTED = "#4B5563"
     TEXT_LIGHT = "#f2f2f6"
-    NAVBAR_BG = "#6677a4"
+    NAVBAR_BG = "#1e2f5d"
     ACCENT_GOLD = "#c29435"
     BORDER_GRAY = "#e5e7eb"
     HOVER_LIGHT = "#e5e7eb"

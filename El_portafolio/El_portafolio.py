@@ -14,5 +14,9 @@ def index():
 
 
 # Inicializamos la aplicación
-app = rx.App()
+app = rx.App(
+    stylesheets=[
+        "https://googleapis.com"
+    ]
+)
 app.add_page(index)
