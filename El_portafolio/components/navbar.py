@@ -26,19 +26,63 @@ def navbar() -> rx.Component:
                     color=Color.TEXT_LIGHT.value,
                 ),
                 align="center",
-                spacing="2",
+                spacing="1",
             ),
-            # El resorte invisible que empuja todo
+            
             rx.spacer(),
-            # Bloque Derecho: Menú de Navegación
+                        # Bloque Derecho: Menú de Navegación
             rx.hstack(
-                rx.link("Inicio", href="#inicio", **NAVBAR_LINK_STYLE),
-                rx.link("Quien Soy", href="#quien-soy", **NAVBAR_LINK_STYLE),
-                rx.link("Proyectos", href="#proyectos", **NAVBAR_LINK_STYLE),
-                rx.button("Contacto", **BUTTON_PRIMARY_STYLE),
-                spacing="3",
+                # Enlace: Inicio (con icono de casa)
+                rx.link(
+                    rx.hstack(
+                        rx.icon("home", size=18),
+                        rx.text("Inicio"),
+                        align="center",
+                        spacing="2",
+                    ),
+                    href="#inicio",
+                    **NAVBAR_LINK_STYLE,
+                ),
+                
+                # Enlace: Quién Soy (con icono de dashboard/layout)
+                rx.link(
+                    rx.hstack(
+                        rx.icon("layout-dashboard", size=18),
+                        rx.text("Quien Soy"),
+                        align="center",
+                        spacing="2",
+                    ),
+                    href="#quien-soy",
+                    **NAVBAR_LINK_STYLE,
+                ),
+                
+                # Enlace: Proyectos (con icono de carpeta/proyectos)
+                rx.link(
+                    rx.hstack(
+                        rx.icon("square-library", size=18), 
+                        rx.text("Proyectos"),
+                        align="center",
+                        spacing="2",
+                    ),
+                    href="#proyectos",
+                    **NAVBAR_LINK_STYLE,
+                ),
+                
+                # Botón: Contacto (con icono de mensaje/correo)
+                rx.button(
+                    rx.hstack(
+                        rx.icon("mail", size=18), 
+                        rx.text("Contacto"),
+                        align="center",
+                        spacing="2",
+                    ),
+                    **BUTTON_PRIMARY_STYLE,
+                ),
+                
+                spacing="3", 
                 align="center",
             ),
+
             align="center",
             width="100%",
             max_width="1500px",
