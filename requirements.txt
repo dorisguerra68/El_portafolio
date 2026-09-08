@@ -1,2 +1,2 @@
 
-reflex==0.9.9
+reflex==0.9.9reflex-components-sonner

@@ -2,7 +2,7 @@ from enum import Enum
 
 
 class FontFamily(Enum):
-    TITLE = "'Emilys Candy', cursive"
+    TITLE = "'Emilys Candy','Noto Sans', cursive"
     SUBTITLE = "'Agbalumo', system-ui"
     HEADING_3 = "'Chicle', serif"
 
