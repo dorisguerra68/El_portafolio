@@ -1,8 +1,9 @@
 import reflex as rx
 
-from El_portafolio.Styles.styles import Color, SUBTITLE_STYLE, TITLE_STYLE
 from El_portafolio.components.footer import footer
 from El_portafolio.components.navbar import navbar
+from El_portafolio.components.project_card import project_card
+from El_portafolio.Styles.styles import Color, SUBTITLE_STYLE, TITLE_STYLE
 
 
 PROJECTS = [
@@ -10,14 +11,26 @@ PROJECTS = [
         "title": "MovieStick",
         "subtitle": "Proyecto de entretenimiento",
         "description": "Una experiencia web relacionada con el cine.",
+        "details": (
+            "MovieStick es una propuesta web enfocada en presentar contenido "
+            "de cine de manera visual y accesible. La página reúne una "
+            "experiencia de exploración pensada para que las personas puedan "
+            "conocer el proyecto y navegar por su catálogo."
+        ),
         "image": "/imagen/img_MovieStick.png",
         "alt": "Identidad visual de MovieStick",
         "url": "https://moviestick.vercel.app/",
     },
     {
-        "title": "Mi portafolio",
-        "subtitle": "Desarrollo web Full Stack",
+        "title": "Sabores que cuidan",
+        "subtitle": "Comer sano sin perder el placer de comer",
         "description": "Proyectos y experiencias de desarrollo web.",
+        "details": (
+            "Sabores que cuidan presenta una propuesta centrada en la "
+            "alimentación saludable, sin dejar de lado el disfrute de la "
+            "comida. Su identidad busca comunicar bienestar y una relación "
+            "amable con la cocina cotidiana."
+        ),
         "image": "/imagen/weddg.webp",
         "alt": "Ilustración de un portafolio de desarrollo web",
         "url": "",
@@ -26,6 +39,11 @@ PROJECTS = [
         "title": "MovieStick - Catálogo",
         "subtitle": "Interfaz de exploración",
         "description": "Vista para descubrir y explorar contenido de cine.",
+        "details": (
+            "Esta sección destaca la experiencia de explorar títulos de cine "
+            "dentro de MovieStick. Su presentación visual ayuda a organizar "
+            "el contenido y facilita recorrer las opciones disponibles."
+        ),
         "image": "/imagen/img_MovieStick.png",
         "alt": "Identidad visual de MovieStick",
         "url": "",
@@ -34,104 +52,17 @@ PROJECTS = [
         "title": "Portafolio profesional",
         "subtitle": "Diseño de experiencia web",
         "description": "Presentación de proyectos y habilidades digitales.",
+        "details": (
+            "Este portafolio reúne una selección de proyectos y habilidades "
+            "de desarrollo web. Está pensado para presentar el trabajo de "
+            "forma clara, con una navegación sencilla y una identidad visual "
+            "coherente."
+        ),
         "image": "/imagen/weddg.webp",
         "alt": "Ilustración de un portafolio de desarrollo web",
         "url": "",
     },
 ]
-
-
-def project_card(
-    title: str,
-    subtitle: str,
-    description: str,
-    image: str,
-    alt: str,
-    url: str,
-) -> rx.Component:
-    if url:
-        project_link = rx.link(
-            rx.hstack(
-                rx.text("Visitar proyecto"),
-                rx.icon("external-link", size=16),
-                align="center",
-                spacing="2",
-            ),
-            href=url,
-            is_external=True,
-            color=Color.TEXT_LIGHT.value,
-            background_color=Color.NAVBAR_BG.value,
-            padding="0.7em 1em",
-            border_radius="10px",
-            font_weight="600",
-            transition="background-color 180ms ease, transform 180ms ease",
-            _hover={
-                "background_color": Color.ACCENT_GOLD.value,
-                "transform": "translateY(-2px)",
-            },
-        )
-    else:
-        project_link = rx.button(
-            "Enlace pendiente",
-            disabled=True,
-            color=Color.TEXT_LIGHT.value,
-            background_color=Color.NAVBAR_BG.value,
-            opacity="0.6",
-            cursor="not-allowed",
-            padding="0.7em 1em",
-            border_radius="10px",
-        )
-
-    return rx.vstack(
-        rx.image(
-            src=image,
-            alt=alt,
-            width="100%",
-            height="240px",
-            object_fit="cover",
-        ),
-        rx.vstack(
-            rx.text(
-                title,
-                **SUBTITLE_STYLE,
-                color=Color.TEXT_DARK.value,
-                font_size="1.5rem",
-            ),
-            rx.text(
-                subtitle,
-                color=Color.TEXT_MUTED.value,
-                font_weight="600",
-            ),
-            rx.text(
-                description,
-                color=Color.TEXT_MUTED.value,
-                line_height="1.6",
-            ),
-            project_link,
-            width="100%",
-            align_items="start",
-            padding="1.25rem",
-            spacing="3",
-        ),
-        width="100%",
-        height="100%",
-        spacing="0",
-        background_color="white",
-        border=f"1px solid {Color.NAVBAR_BG.value}",
-        border_left=f"5px solid {Color.NAVBAR_BG.value}",
-        border_radius="14px",
-        overflow="hidden",
-        box_shadow="0 8px 24px rgba(30, 47, 93, 0.14)",
-        transition=(
-            "transform 180ms ease, box-shadow 180ms ease, "
-            "border-color 180ms ease"
-        ),
-        _hover={
-            "transform": "translateY(-5px) scale(1.015)",
-            "box_shadow": "0 16px 34px rgba(30, 47, 93, 0.22)",
-            "border_color": Color.ACCENT_GOLD.value,
-        },
-    )
 
 
 @rx.page(route="/projects", title="Mis Proyectos")
