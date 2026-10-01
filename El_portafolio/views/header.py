@@ -47,7 +47,7 @@ def header() -> rx.Component:
             ),
             **LAYOUT_SECTION_BASE,
             padding=f"{Size.BIG.value} {Size.MEDIUM.value}",
-            background_image="url('imagen/weddg.webp')",
+            background_image="url('/imagen/fondoDG2.webp')",
             background_size="cover",
             background_position="right center",
             background_repeat="no-repeat",
