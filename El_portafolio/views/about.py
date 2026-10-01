@@ -25,11 +25,7 @@ def about() -> rx.Component:
             rx.flex(
                 rx.link(
                     rx.image(
-                        src=(
-                            "https://images.unsplash.com/"
-                            "photo-1544005313-94ddf0286df2?"
-                            "auto=format&fit=crop&w=900&q=80"
-                        ),
+                        src="/imagen/imgDG5.jpeg",
                         alt="Retrato de Doris Guerra",
                         width="100%",
                         height="100%",
