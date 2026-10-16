@@ -1,8 +1,9 @@
 import reflex as rx
 
-from El_portafolio.Styles.styles import Color, SUBTITLE_STYLE, TITLE_STYLE
 from El_portafolio.components.footer import footer
 from El_portafolio.components.navbar import navbar
+from El_portafolio.components.project_card import project_card
+from El_portafolio.Styles.styles import Color, SUBTITLE_STYLE, TITLE_STYLE
 
 
 PROJECTS = [
@@ -10,128 +11,75 @@ PROJECTS = [
         "title": "MovieStick",
         "subtitle": "Proyecto de entretenimiento",
         "description": "Una experiencia web relacionada con el cine.",
+        "details": (
+            "MovieStick es una propuesta web enfocada en presentar contenido "
+            "de cine de manera visual y accesible. La página reúne una "
+            "experiencia de exploración pensada para que las personas puedan "
+            "conocer el proyecto y navegar por su catálogo."
+        ),
         "image": "/imagen/img_MovieStick.png",
-        "alt": "Identidad visual de MovieStick",
+        "alt": "Portada de MovieStick con logotipo y botón Entrar",
         "url": "https://moviestick.vercel.app/",
     },
     {
-        "title": "Mi portafolio",
-        "subtitle": "Desarrollo web Full Stack",
+        "title": "Sabores que cuidan",
+        "subtitle": "Comer sano sin perder el placer de comer",
         "description": "Proyectos y experiencias de desarrollo web.",
-        "image": "/imagen/weddg.webp",
-        "alt": "Ilustración de un portafolio de desarrollo web",
-        "url": "",
+        "details": (
+            "Aplicación web Full Stack que ayuda a mejorar los hábitos "
+            "alimenticios mediante el registro diario de comidas y el "
+            "seguimiento del progreso. Promueve una alimentación saludable "
+            "sin dejar de lado el placer de comer."
+        ),
+            "details_heading": "EN CONSTRUCCIÓN",
+            "details_image": "/imagen/enconstruccion.jpg",
+        "image": "/imagen/saboresquecuidan.png",
+        "alt": (
+            "Logotipo Sabores que cuidan: hojas verdes sobre una mano "
+            "y el nombre del proyecto"
+        ),
+        "url": "https://frontend-sabores-que-cuidan-alpha.vercel.app/",
     },
     {
-        "title": "MovieStick - Catálogo",
-        "subtitle": "Interfaz de exploración",
-        "description": "Vista para descubrir y explorar contenido de cine.",
-        "image": "/imagen/img_MovieStick.png",
-        "alt": "Identidad visual de MovieStick",
-        "url": "",
+        "title": "Content Enrichment",
+        "subtitle": "Herramienta_consulta_wikipedia",
+        "description": "Herramienta que enriquece de texto.",
+        "details": (
+            "Esta herramienta permite al usuario introducir un tema,  "
+            "consultar Wikipedia mediante scraping, "
+            "extraer el contenido principal, enriquecerlo con IA,"
+            "traducirlo a cualquier idioma y exportarlo en formato text y PDF."
+        ),
+        "image": "/imagen/Scraping_Wikipedia.png",
+        "alt": (
+            "Captura de la herramienta de Wikipedia que consulta, "
+            "enriquece y traduce artículos"
+        ),
+        "url": (
+            "https://github.com/dorisguerra68/"
+            "herramienta_consulta_wikipedia"
+        ),
     },
     {
-        "title": "Portafolio profesional",
+        "title": "LinkBio",
         "subtitle": "Diseño de experiencia web",
         "description": "Presentación de proyectos y habilidades digitales.",
-        "image": "/imagen/weddg.webp",
-        "alt": "Ilustración de un portafolio de desarrollo web",
+        "details": (
+            "Este portafolio reúne una selección de proyectos y habilidades "
+            "de desarrollo web. Está pensado para presentar el trabajo de "
+            "forma clara, con una navegación sencilla y una identidad visual "
+            "coherente."
+        ),
+        "details_heading": "EN CONSTRUCCIÓN",
+        "details_image": "/imagen/enconstruccion.jpg",
+        "image": "/imagen/linkbio_doris.png",
+        "alt": (
+            "Perfil LinkBio de Doris Guerra con foto y accesos al portafolio, "
+            "blogs, Instagram y contacto"
+        ),
         "url": "",
     },
 ]
-
-
-def project_card(
-    title: str,
-    subtitle: str,
-    description: str,
-    image: str,
-    alt: str,
-    url: str,
-) -> rx.Component:
-    if url:
-        project_link = rx.link(
-            rx.hstack(
-                rx.text("Visitar proyecto"),
-                rx.icon("external-link", size=16),
-                align="center",
-                spacing="2",
-            ),
-            href=url,
-            is_external=True,
-            color=Color.TEXT_LIGHT.value,
-            background_color=Color.NAVBAR_BG.value,
-            padding="0.7em 1em",
-            border_radius="10px",
-            font_weight="600",
-            transition="background-color 180ms ease, transform 180ms ease",
-            _hover={
-                "background_color": Color.ACCENT_GOLD.value,
-                "transform": "translateY(-2px)",
-            },
-        )
-    else:
-        project_link = rx.button(
-            "Enlace pendiente",
-            disabled=True,
-            color=Color.TEXT_LIGHT.value,
-            background_color=Color.NAVBAR_BG.value,
-            opacity="0.6",
-            cursor="not-allowed",
-            padding="0.7em 1em",
-            border_radius="10px",
-        )
-
-    return rx.vstack(
-        rx.image(
-            src=image,
-            alt=alt,
-            width="100%",
-            height="240px",
-            object_fit="cover",
-        ),
-        rx.vstack(
-            rx.text(
-                title,
-                **SUBTITLE_STYLE,
-                color=Color.TEXT_DARK.value,
-                font_size="1.5rem",
-            ),
-            rx.text(
-                subtitle,
-                color=Color.TEXT_MUTED.value,
-                font_weight="600",
-            ),
-            rx.text(
-                description,
-                color=Color.TEXT_MUTED.value,
-                line_height="1.6",
-            ),
-            project_link,
-            width="100%",
-            align_items="start",
-            padding="1.25rem",
-            spacing="3",
-        ),
-        width="100%",
-        height="100%",
-        spacing="0",
-        background_color="white",
-        border=f"1px solid {Color.NAVBAR_BG.value}",
-        border_left=f"5px solid {Color.NAVBAR_BG.value}",
-        border_radius="14px",
-        overflow="hidden",
-        box_shadow="0 8px 24px rgba(30, 47, 93, 0.14)",
-        transition=(
-            "transform 180ms ease, box-shadow 180ms ease, "
-            "border-color 180ms ease"
-        ),
-        _hover={
-            "transform": "translateY(-5px) scale(1.015)",
-            "box_shadow": "0 16px 34px rgba(30, 47, 93, 0.22)",
-            "border_color": Color.ACCENT_GOLD.value,
-        },
-    )
 
 
 @rx.page(route="/projects", title="Mis Proyectos")
