@@ -26,7 +26,47 @@ def project_card(
     image: str,
     alt: str,
     url: str,
+    details_heading: str = "",
+    details_image: str = "",
 ) -> rx.Component:
+    details_content = []
+    if details_image:
+        details_content.append(
+            rx.center(
+                rx.image(
+                    src=details_image,
+                    alt=(
+                        "Ilustración de desarrollo y construcción "
+                        "de una página web"
+                    ),
+                    width="100%",
+                    max_width="520px",
+                    height="auto",
+                    object_fit="contain",
+                ),
+                width="100%",
+            )
+        )
+    if details_heading:
+        details_content.append(
+            rx.text(
+                details_heading,
+                font_size="1.75rem",
+                font_weight="bold",
+                color=Color.TEXT_DARK.value,
+                text_align="center",
+                width="100%",
+            )
+        )
+    details_content.append(
+        rx.text(
+            details,
+            color=Color.TEXT_MUTED.value,
+            line_height="1.7",
+            width="100%",
+        )
+    )
+
     if url:
         project_link = rx.link(
             rx.hstack(
@@ -105,10 +145,11 @@ def project_card(
             rx.cond(
                 ProjectCardState.open_project == title,
                 rx.box(
-                    rx.text(
-                        details,
-                        color=Color.TEXT_MUTED.value,
-                        line_height="1.7",
+                    rx.vstack(
+                        *details_content,
+                        width="100%",
+                        align_items="center",
+                        spacing="4",
                     ),
                     width="100%",
                     padding="1rem",

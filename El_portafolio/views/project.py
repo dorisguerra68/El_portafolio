@@ -18,7 +18,7 @@ PROJECTS = [
             "conocer el proyecto y navegar por su catálogo."
         ),
         "image": "/imagen/img_MovieStick.png",
-        "alt": "Identidad visual de MovieStick",
+        "alt": "Portada de MovieStick con logotipo y botón Entrar",
         "url": "https://moviestick.vercel.app/",
     },
     {
@@ -26,30 +26,42 @@ PROJECTS = [
         "subtitle": "Comer sano sin perder el placer de comer",
         "description": "Proyectos y experiencias de desarrollo web.",
         "details": (
-            "Sabores que cuidan presenta una propuesta centrada en la "
-            "alimentación saludable, sin dejar de lado el disfrute de la "
-            "comida. Su identidad busca comunicar bienestar y una relación "
-            "amable con la cocina cotidiana."
+            "Aplicación web Full Stack que ayuda a mejorar los hábitos "
+            "alimenticios mediante el registro diario de comidas y el "
+            "seguimiento del progreso. Promueve una alimentación saludable "
+            "sin dejar de lado el placer de comer."
         ),
-        "image": "/imagen/weddg.webp",
-        "alt": "Ilustración de un portafolio de desarrollo web",
-        "url": "",
+            "details_heading": "EN CONSTRUCCIÓN",
+            "details_image": "/imagen/enconstruccion.jpg",
+        "image": "/imagen/saboresquecuidan.png",
+        "alt": (
+            "Logotipo Sabores que cuidan: hojas verdes sobre una mano "
+            "y el nombre del proyecto"
+        ),
+        "url": "https://frontend-sabores-que-cuidan-alpha.vercel.app/",
     },
     {
-        "title": "MovieStick - Catálogo",
-        "subtitle": "Interfaz de exploración",
-        "description": "Vista para descubrir y explorar contenido de cine.",
+        "title": "Content Enrichment",
+        "subtitle": "Herramienta_consulta_wikipedia",
+        "description": "Herramienta que enriquece de texto.",
         "details": (
-            "Esta sección destaca la experiencia de explorar títulos de cine "
-            "dentro de MovieStick. Su presentación visual ayuda a organizar "
-            "el contenido y facilita recorrer las opciones disponibles."
+            "Esta herramienta permite al usuario introducir un tema,  "
+            "consultar Wikipedia mediante scraping, "
+            "extraer el contenido principal, enriquecerlo con IA,"
+            "traducirlo a cualquier idioma y exportarlo en formato text y PDF."
         ),
-        "image": "/imagen/img_MovieStick.png",
-        "alt": "Identidad visual de MovieStick",
-        "url": "",
+        "image": "/imagen/Scraping_Wikipedia.png",
+        "alt": (
+            "Captura de la herramienta de Wikipedia que consulta, "
+            "enriquece y traduce artículos"
+        ),
+        "url": (
+            "https://github.com/dorisguerra68/"
+            "herramienta_consulta_wikipedia"
+        ),
     },
     {
-        "title": "Portafolio profesional",
+        "title": "LinkBio",
         "subtitle": "Diseño de experiencia web",
         "description": "Presentación de proyectos y habilidades digitales.",
         "details": (
@@ -58,8 +70,13 @@ PROJECTS = [
             "forma clara, con una navegación sencilla y una identidad visual "
             "coherente."
         ),
-        "image": "/imagen/weddg.webp",
-        "alt": "Ilustración de un portafolio de desarrollo web",
+        "details_heading": "EN CONSTRUCCIÓN",
+        "details_image": "/imagen/enconstruccion.jpg",
+        "image": "/imagen/linkbio_doris.png",
+        "alt": (
+            "Perfil LinkBio de Doris Guerra con foto y accesos al portafolio, "
+            "blogs, Instagram y contacto"
+        ),
         "url": "",
     },
 ]
