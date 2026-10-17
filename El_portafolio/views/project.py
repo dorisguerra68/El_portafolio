@@ -82,7 +82,6 @@ PROJECTS = [
 ]
 
 
-@rx.page(route="/projects", title="Mis Proyectos")
 def project() -> rx.Component:
     return rx.vstack(
         navbar(),
@@ -102,17 +101,20 @@ def project() -> rx.Component:
             ),
             rx.grid(
                 *[project_card(**item) for item in PROJECTS],
-                gap="1.5rem",
+                gap=["1rem", "1.25rem", "1.5rem"],
                 grid_template_columns=[
                     "1fr",
+                    "1fr",
                     "repeat(2, minmax(0, 1fr))",
+                    "repeat(3, minmax(0, 1fr))",
                 ],
                 width="100%",
                 max_width="1200px",
+                min_width="0",
             ),
             width="100%",
             align_items="center",
-            padding=["2rem 1rem", "3rem 2rem"],
+            padding=["2rem 1rem", "2.5rem 1.5rem", "3rem 2rem"],
             spacing="5",
             background=(
                 "linear-gradient(135deg, rgba(250,250,255,1) 0%, "

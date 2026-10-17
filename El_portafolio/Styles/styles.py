@@ -1,5 +1,7 @@
 from enum import Enum
 
+import reflex as rx
+
 
 class FontFamily(Enum):
     TITLE = "'Emilys Candy','Noto Sans', cursive"
@@ -9,14 +11,14 @@ class FontFamily(Enum):
 
 TITLE_STYLE = {
     "font_family": FontFamily.TITLE.value,
-    "size": "9",
+    "size": rx.breakpoints(initial="7", sm="8", md="9"),
     "weight": "bold",
 }
 
 
 SUBTITLE_STYLE = {
     "font_family": FontFamily.SUBTITLE.value,
-    "size": "7",
+    "size": rx.breakpoints(initial="4", sm="5", md="6"),
     "weight": "medium",
 }
 
@@ -81,8 +83,8 @@ BUTTON_PRIMARY_STYLE = {
     "variant": "solid",
     "cursor": "pointer",
     "border_radius": "18px",
-    "padding_x": "1.4em",
-    "padding_y": "0.9em",
+    "padding_x": ["0.9em", "1.1em", "1.4em"],
+    "padding_y": ["0.7em", "0.8em", "0.9em"],
     "border": f"1px solid {Color.BORDER_GRAY.value}",
     "box_shadow": "0 6px 14px rgba(194, 148, 53, 0.25)",
     "transition": "all 0.2s ease",

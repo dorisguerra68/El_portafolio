@@ -4,3 +4,4 @@ assets/external/
 *.db
 __pycache__/
 .web
+.env

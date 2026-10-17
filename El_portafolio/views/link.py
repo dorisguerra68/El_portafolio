@@ -14,6 +14,7 @@ def link() -> rx.Component:
             "https://github.com/dorisguerra68",
         ),
         width="100%",
-        spacing="3",
+        spacing=rx.breakpoints(initial="2", sm="3"),
         flex_wrap="wrap",
+        justify="center",
     )

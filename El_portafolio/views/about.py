@@ -11,7 +11,6 @@ from El_portafolio.Styles.styles import (
 )
 
 
-@rx.page(route="/about", title="Sobre mí")
 def about() -> rx.Component:
     return rx.vstack(
         navbar(),
@@ -28,24 +27,26 @@ def about() -> rx.Component:
                         src="/imagen/imgDG5.jpeg",
                         alt="Retrato de Doris Guerra",
                         width="100%",
-                        height="100%",
+                        height=["260px", "340px", "420px"],
                         object_fit="cover",
+                        object_position="center",
                         border_radius="24px",
                         box_shadow="0 18px 40px rgba(30, 47, 93, 0.15)",
                     ),
                     href="https://www.linkedin.com",
                     is_external=True,
-                    width="45%",
-                    min_width="280px",
+                    width=["100%", "42%"],
+                    min_width=["0", "280px"],
                     border_radius="24px",
                     overflow="hidden",
+                    flex_shrink="0",
                 ),
                 rx.vstack(
                     rx.text(
                         "Desarrolladora Web Full Stack",
                         **SUBTITLE_STYLE,
                         color=Color.TEXT_MUTED.value,
-                        font_size="2rem",
+                        font_size=["1.45rem", "1.7rem", "2rem"],
                         padding=Size.SMALL.value, 
                     ),
                     rx.text(
@@ -56,10 +57,11 @@ def about() -> rx.Component:
                             "y visualmente atractivas."
                         ),
                         color=Color.TEXT_MUTED.value,
-                        font_size="1.9rem",
+                        font_size=["1rem", "1.15rem", "1.25rem"],
                         line_height="1.8",
                         max_width="700px",
-                        padding=Size.SMALL.value,                    ),
+                        padding=Size.SMALL.value,
+                    ),
                     rx.text(
                         (
                             "Me especializo en el diseño y desarrollo "
@@ -68,7 +70,7 @@ def about() -> rx.Component:
                             "experiencia de usuario."
                         ),
                         color=Color.TEXT_MUTED.value,
-                        font_size="1.9rem",
+                        font_size=["1rem", "1.15rem", "1.25rem"],
                         line_height="1.8",
                         max_width="700px",
                         padding=Size.SMALL.value, 
@@ -81,11 +83,12 @@ def about() -> rx.Component:
                 max_width="1200px",
                 align="center",
                 justify="between",
-                spacing="4",
+                spacing=rx.breakpoints(initial="4", sm="5"),
                 wrap="wrap",
+                padding_x=["0", "0.5rem"],
             ),
             **LAYOUT_SECTION_BASE,
-            padding=f"{Size.BIG.value} {Size.MEDIUM.value}",
+            padding=["2.5rem 1rem", "3.5rem 2rem", f"{Size.BIG.value} {Size.MEDIUM.value}"],
             background=(
                 "linear-gradient(135deg, rgba(250,250,255,1) 0%, "
                 "rgba(240,243,252,1) 100%)"
