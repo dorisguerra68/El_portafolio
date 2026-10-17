@@ -105,7 +105,7 @@ def project_card(
             src=image,
             alt=alt,
             width="100%",
-            height="240px",
+            height=["190px", "210px", "240px"],
             object_fit="cover",
             on_click=ProjectCardState.close_details,
             cursor="pointer",
@@ -162,8 +162,8 @@ def project_card(
             project_link,
             width="100%",
             align_items="start",
-            padding="1.25rem",
-            spacing="3",
+            padding=["1rem", "1.1rem", "1.25rem"],
+            spacing=rx.breakpoints(initial="2", sm="3"),
         ),
         width="100%",
         height="100%",
@@ -179,7 +179,7 @@ def project_card(
             "border-color 180ms ease"
         ),
         _hover={
-            "transform": "translateY(-5px) scale(1.015)",
+            "transform": ["none", "translateY(-5px) scale(1.015)"],
             "box_shadow": "0 16px 34px rgba(30, 47, 93, 0.22)",
             "border_color": Color.ACCENT_GOLD.value,
         },

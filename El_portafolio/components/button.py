@@ -8,6 +8,8 @@ def button(text: str, url: str) -> rx.Component:
         text,
         # Estilo global compartido para todos los botones principales.
         **BUTTON_PRIMARY_STYLE,
+        width=["100%", "auto"],
+        justify_content="center",
         # Redirección externa para abrir el enlace en nueva pestaña.
         on_click=rx.redirect(url, is_external=True),
     )
