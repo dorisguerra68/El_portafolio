@@ -44,8 +44,8 @@ def contact() -> rx.Component:
                     ),
                     rx.vstack(
                         rx.link(
-                            "✉️ contacto@dorisguerra.dev",
-                            href="mailto:contacto@dorisguerra.dev",
+                            "✉️ loretodoris68@gmail.com",
+                            href="mailto:loretodoris68@gmail.com",
                             color=Color.TEXT_DARK.value,
                             font_weight="600",
                             word_break="break-word",
@@ -86,7 +86,7 @@ def contact() -> rx.Component:
                 max_width="1100px",
             ),
             rx.text(
-                "Gracias por visitar mi portafolio.",
+                "Gracias por visitar mi portfolio.",
                 **SUBTITLE_STYLE,
                 color=Color.TEXT_MUTED.value,
                 text_align="center",

@@ -6,7 +6,6 @@ from El_portafolio.Styles.styles import (
     SUBTITLE_STYLE,
     TITLE_STYLE,
 )
-from El_portafolio.views.link import link
 
 
 def header() -> rx.Component:
@@ -40,11 +39,6 @@ def header() -> rx.Component:
                     "transparent",
                 ],
                 border_radius=["20px", "0"],
-            ),
-            rx.box(
-                link(),
-                margin_top=["0.75rem", Size.MEDIUM.value],
-                width="100%",
             ),
             width="100%",
             align_items=["center", "start"],
