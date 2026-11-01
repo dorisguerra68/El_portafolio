@@ -9,94 +9,98 @@ from El_portafolio.Styles.styles import (
     SUBTITLE_STYLE,
     TITLE_STYLE,
 )
+from El_portafolio.Styles.stylesNocturno import themed_page
 
 
 def about() -> rx.Component:
-    return rx.vstack(
-        navbar(),
+    return themed_page(
         rx.vstack(
-            rx.text(
-                "Sobre mí",
-                **TITLE_STYLE,
-                color=Color.TEXT_DARK.value,
-                text_align="center",
-            ),
-            rx.flex(
-                rx.link(
-                    rx.image(
-                        src="/imagen/imgDG5.jpeg",
-                        alt="Retrato de Doris Guerra",
-                        width="100%",
-                        height=["260px", "340px", "420px"],
-                        object_fit="cover",
-                        object_position="center",
+            navbar(),
+            rx.vstack(
+                rx.text(
+                    "Sobre mí",
+                    **TITLE_STYLE,
+                    color=Color.TEXT_DARK.value,
+                    text_align="center",
+                ),
+                rx.flex(
+                    rx.link(
+                        rx.image(
+                            src="/imagen/imgDG5.jpeg",
+                            alt="Retrato de Doris Guerra",
+                            width="100%",
+                            height=["260px", "340px", "420px"],
+                            object_fit="cover",
+                            object_position="center",
+                            border_radius="24px",
+                            box_shadow="0 18px 40px rgba(30, 47, 93, 0.15)",
+                        ),
+                        href="https://www.linkedin.com",
+                        is_external=True,
+                        width=["100%", "42%"],
+                        min_width=["0", "280px"],
                         border_radius="24px",
-                        box_shadow="0 18px 40px rgba(30, 47, 93, 0.15)",
+                        overflow="hidden",
+                        flex_shrink="0",
                     ),
-                    href="https://www.linkedin.com",
-                    is_external=True,
-                    width=["100%", "42%"],
-                    min_width=["0", "280px"],
-                    border_radius="24px",
-                    overflow="hidden",
-                    flex_shrink="0",
-                ),
-                rx.vstack(
-                    rx.text(
-                        "Desarrolladora Web Full Stack",
-                        **SUBTITLE_STYLE,
-                        color=Color.TEXT_MUTED.value,
-                        font_size=["1.45rem", "1.7rem", "2rem"],
-                        padding=Size.SMALL.value, 
-                    ),
-                    rx.text(
-                        (
-                            "Soy Doris Guerra, una desarrolladora "
-                            "web Full Stack con pasión por crear "
-                            "experiencias digitales claras, útiles "
-                            "y visualmente atractivas."
+                    rx.vstack(
+                        rx.text(
+                            "Desarrolladora Web Full Stack",
+                            **SUBTITLE_STYLE,
+                            color=Color.TEXT_MUTED.value,
+                            font_size=["1.45rem", "1.7rem", "2rem"],
+                            padding=Size.SMALL.value,
                         ),
-                        color=Color.TEXT_MUTED.value,
-                        font_size=["1rem", "1.15rem", "1.25rem"],
-                        line_height="1.8",
-                        max_width="700px",
-                        padding=Size.SMALL.value,
-                    ),
-                    rx.text(
-                        (
-                            "Me especializo en el diseño y desarrollo "
-                            "de soluciones modernas, con atención al "
-                            "detalle, código limpio y una excelente "
-                            "experiencia de usuario."
+                        rx.text(
+                            (
+                                "Soy Doris Guerra, una desarrolladora "
+                                "web Full Stack con pasión por crear "
+                                "experiencias digitales claras, útiles "
+                                "y visualmente atractivas."
+                            ),
+                            color=Color.TEXT_MUTED.value,
+                            font_size=["1rem", "1.15rem", "1.25rem"],
+                            line_height="1.8",
+                            max_width="700px",
+                            padding=Size.SMALL.value,
                         ),
-                        color=Color.TEXT_MUTED.value,
-                        font_size=["1rem", "1.15rem", "1.25rem"],
-                        line_height="1.8",
-                        max_width="700px",
-                        padding=Size.SMALL.value, 
+                        rx.text(
+                            (
+                                "Me especializo en el diseño y desarrollo "
+                                "de soluciones modernas, con atención al "
+                                "detalle, código limpio y una excelente "
+                                "experiencia de usuario."
+                            ),
+                            color=Color.TEXT_MUTED.value,
+                            font_size=["1rem", "1.15rem", "1.25rem"],
+                            line_height="1.8",
+                            max_width="700px",
+                            padding=Size.SMALL.value,
+                        ),
+                        align_items="start",
+                        spacing="4",
+                        flex="1",
                     ),
-                    align_items="start",
-                    spacing="4",
-                    flex="1",
+                    width="100%",
+                    max_width="1200px",
+                    align="center",
+                    justify="between",
+                    spacing=rx.breakpoints(initial="4", sm="5"),
+                    wrap="wrap",
+                    padding_x=["0", "0.5rem"],
                 ),
-                width="100%",
-                max_width="1200px",
+                **LAYOUT_SECTION_BASE,
+                padding=[
+                    "2.5rem 1rem",
+                    "3.5rem 2rem",
+                    f"{Size.BIG.value} {Size.MEDIUM.value}",
+                ],
+                background="var(--portfolio-page-background)",
+                min_height="calc(100vh - 160px)",
+                spacing="6",
                 align="center",
-                justify="between",
-                spacing=rx.breakpoints(initial="4", sm="5"),
-                wrap="wrap",
-                padding_x=["0", "0.5rem"],
             ),
-            **LAYOUT_SECTION_BASE,
-            padding=["2.5rem 1rem", "3.5rem 2rem", f"{Size.BIG.value} {Size.MEDIUM.value}"],
-            background=(
-                "linear-gradient(135deg, rgba(250,250,255,1) 0%, "
-                "rgba(240,243,252,1) 100%)"
-            ),
-            min_height="calc(100vh - 160px)",
-            spacing="6",
-            align="center",
-        ),
-        footer(),
-        width="100%",
+            footer(),
+            width="100%",
+        )
     )

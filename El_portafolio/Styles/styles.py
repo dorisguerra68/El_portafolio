@@ -43,17 +43,17 @@ class Size(Enum):
 
 
 class Color(Enum):
-    TEXT_DARK = "#1e2f5d"
-    TEXT_MUTED = "#4B5563"
-    TEXT_LIGHT = "#f2f2f6"
-    NAVBAR_BG = "#1e2f5d"
-    ACCENT_GOLD = "#c29435"
-    BORDER_GRAY = "#e5e7eb"
-    HOVER_LIGHT = "#e5e7eb"
-    HOVER_BLUE = "#234a73"
-    FOOTER_BG = "#f0f3fc"
-    FOOTER_ALT = "#e2e8f4"
-    FOOTER_TEXT = "#1f2937"
+    TEXT_DARK = "var(--portfolio-text-dark)"
+    TEXT_MUTED = "var(--portfolio-text-muted)"
+    TEXT_LIGHT = "var(--portfolio-text-light)"
+    NAVBAR_BG = "var(--portfolio-navbar-bg)"
+    ACCENT_GOLD = "var(--portfolio-accent-gold)"
+    BORDER_GRAY = "var(--portfolio-border)"
+    HOVER_LIGHT = "var(--portfolio-hover-light)"
+    HOVER_BLUE = "var(--portfolio-hover-blue)"
+    FOOTER_BG = "var(--portfolio-footer-bg)"
+    FOOTER_ALT = "var(--portfolio-footer-alt)"
+    FOOTER_TEXT = "var(--portfolio-footer-text)"
 
 
 LAYOUT_SECTION_BASE = {

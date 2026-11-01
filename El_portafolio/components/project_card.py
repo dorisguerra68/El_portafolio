@@ -168,7 +168,7 @@ def project_card(
         width="100%",
         height="100%",
         spacing="0",
-        background_color="white",
+        background_color="var(--portfolio-card-background)",
         border=f"1px solid {Color.NAVBAR_BG.value}",
         border_left=f"5px solid {Color.NAVBAR_BG.value}",
         border_radius="14px",

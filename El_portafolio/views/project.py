@@ -4,6 +4,7 @@ from El_portafolio.components.footer import footer
 from El_portafolio.components.navbar import navbar
 from El_portafolio.components.project_card import project_card
 from El_portafolio.Styles.styles import Color, SUBTITLE_STYLE, TITLE_STYLE
+from El_portafolio.Styles.stylesNocturno import themed_page
 
 
 PROJECTS = [
@@ -83,45 +84,44 @@ PROJECTS = [
 
 
 def project() -> rx.Component:
-    return rx.vstack(
-        navbar(),
+    return themed_page(
         rx.vstack(
-            rx.text(
-                "Mis proyectos",
-                **TITLE_STYLE,
-                color=Color.TEXT_DARK.value,
-                text_align="center",
-            ),
-            rx.text(
-                "Una selección de mis trabajos de desarrollo web",
-                **SUBTITLE_STYLE,
-                color=Color.TEXT_MUTED.value,
-                text_align="center",
-                font_size="1.4rem",
-            ),
-            rx.grid(
-                *[project_card(**item) for item in PROJECTS],
-                gap=["1rem", "1.25rem", "1.5rem"],
-                grid_template_columns=[
-                    "1fr",
-                    "1fr",
-                    "repeat(2, minmax(0, 1fr))",
-                    "repeat(3, minmax(0, 1fr))",
-                ],
+            navbar(),
+            rx.vstack(
+                rx.text(
+                    "Mis proyectos",
+                    **TITLE_STYLE,
+                    color=Color.TEXT_DARK.value,
+                    text_align="center",
+                ),
+                rx.text(
+                    "Una selección de mis trabajos de desarrollo web",
+                    **SUBTITLE_STYLE,
+                    color=Color.TEXT_MUTED.value,
+                    text_align="center",
+                    font_size="1.4rem",
+                ),
+                rx.grid(
+                    *[project_card(**item) for item in PROJECTS],
+                    gap=["1rem", "1.25rem", "1.5rem"],
+                    grid_template_columns=[
+                        "1fr",
+                        "1fr",
+                        "repeat(2, minmax(0, 1fr))",
+                        "repeat(3, minmax(0, 1fr))",
+                    ],
+                    width="100%",
+                    max_width="1200px",
+                    min_width="0",
+                ),
                 width="100%",
-                max_width="1200px",
-                min_width="0",
+                align_items="center",
+                padding=["2rem 1rem", "2.5rem 1.5rem", "3rem 2rem"],
+                spacing="5",
+                background="var(--portfolio-page-background)",
             ),
+            footer(),
             width="100%",
-            align_items="center",
-            padding=["2rem 1rem", "2.5rem 1.5rem", "3rem 2rem"],
-            spacing="5",
-            background=(
-                "linear-gradient(135deg, rgba(250,250,255,1) 0%, "
-                "rgba(240,243,252,1) 100%)"
-            ),
-        ),
-        footer(),
-        width="100%",
-        spacing="0",
+            spacing="0",
+        )
     )

@@ -2,6 +2,7 @@ import reflex as rx
 
 from El_portafolio.components.footer import footer
 from El_portafolio.components.navbar import navbar
+from El_portafolio.Styles.stylesNocturno import themed_page
 from El_portafolio.views.about import about
 from El_portafolio.views.contact import contact
 from El_portafolio.views.header import header
@@ -9,11 +10,13 @@ from El_portafolio.views.project import project
 
 
 def index():
-    return rx.vstack(
-        navbar(),
-        header(),
-        footer(),
-        align="center",
+    return themed_page(
+        rx.vstack(
+            navbar(),
+            header(),
+            footer(),
+            align="center",
+        )
     )
 
 

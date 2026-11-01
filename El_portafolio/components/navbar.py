@@ -5,6 +5,7 @@ from El_portafolio.Styles.styles import (
     Color,
     NAVBAR_LINK_STYLE,
 )
+from El_portafolio.Styles.stylesNocturno import ThemeState
 
 
 def _nav_link(label: str, icon: str, href: str, primary: bool = False) -> rx.Component:
@@ -33,6 +34,29 @@ def _nav_links(mobile: bool = False) -> rx.Component:
         justify="center",
         flex_wrap="wrap",
         width="100%" if mobile else ["100%", "100%", "auto"],
+    )
+
+
+def _theme_toggle() -> rx.Component:
+    return rx.button(
+        rx.cond(
+            ThemeState.night_mode,
+            rx.icon("sun", size=18),
+            rx.icon("moon", size=18),
+        ),
+        on_click=ThemeState.toggle_theme,
+        aria_label=rx.cond(
+            ThemeState.night_mode,
+            "Cambiar a modo diurno",
+            "Cambiar a modo nocturno",
+        ),
+        title=rx.cond(ThemeState.night_mode, "Modo diurno", "Modo nocturno"),
+        color=Color.TEXT_LIGHT.value,
+        background_color="rgba(255,255,255,0.12)",
+        border_radius="12px",
+        padding="0.65rem",
+        cursor="pointer",
+        _hover={"background_color": "rgba(255,255,255,0.22)"},
     )
 
 
@@ -93,6 +117,7 @@ def navbar() -> rx.Component:
                         position="relative",
                     ),
                 ),
+                _theme_toggle(),
                 rx.desktop_only(_nav_links()),
                 width="100%",
                 align="center",
@@ -112,7 +137,7 @@ def navbar() -> rx.Component:
         width="100%",
         padding_x=["0.5rem", "0.75rem", "1rem"],
         padding_y=["0.5rem", "0.75rem", "1rem"],
-        background_color="rgba(30, 47, 93, 0.96)",
+        background_color="var(--portfolio-navbar-shell)",
         border_bottom=f"1px solid {Color.BORDER_GRAY.value}",
         backdrop_filter="blur(12px)",
         position="sticky",
