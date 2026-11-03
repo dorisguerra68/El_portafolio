@@ -49,8 +49,8 @@ def header() -> rx.Component:
                 f"{Size.BIG.value} {Size.MEDIUM.value}",
             ],
             background_image=[
-                "linear-gradient(to bottom, rgba(250,250,255,0.02) 22%, rgba(250,250,255,0.35) 48%, rgba(250,250,255,0.98) 76%), url('/imagen/fondoDG2.webp')",
-                "url('/imagen/fondoDG2.webp')",
+                "var(--portfolio-hero-mobile-overlay), url('/imagen/fondoDG2.webp')",
+                "var(--portfolio-hero-desktop-overlay), url('/imagen/fondoDG2.webp')",
             ],
             background_size="cover",
             background_position=["center center", "right center"],
