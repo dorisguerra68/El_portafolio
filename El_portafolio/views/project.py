@@ -73,7 +73,7 @@ PROJECTS = [
         ),
         "details_heading": "EN CONSTRUCCIÓN",
         "details_image": "/imagen/enconstruccion.jpg",
-        "image": "/imagen/linkbio_doris.png",
+        "image": "/imagen/linkbio_doris1.png",
         "alt": (
             "Perfil LinkBio de Doris Guerra con foto y accesos al portafolio, "
             "blogs, Instagram y contacto"
