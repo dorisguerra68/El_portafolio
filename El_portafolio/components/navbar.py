@@ -65,12 +65,16 @@ def navbar() -> rx.Component:
         rx.vstack(
             rx.hstack(
                 rx.hstack(
-                    rx.avatar(
-                        fallback="DG",
-                        size="2",
-                        background_color=Color.ACCENT_GOLD.value,
-                        color=Color.TEXT_LIGHT.value,
-                        variant="soft",
+                    rx.link(
+                        rx.image(
+                            src="imagen/logodg-icono.png",
+                            alt="Logo de Doris Guerra",
+                            box_size="2rem",
+                            object_fit="contain",
+                            flex_shrink="0",
+                        ),
+                        href="/",
+                        aria_label="Ir al inicio",
                     ),
                     rx.text(
                         "DevPortfolio",
@@ -129,10 +133,10 @@ def navbar() -> rx.Component:
             max_width="1200px",
             padding_x=["0.75rem", "1.25rem", "2rem"],
             padding_y=["0.75rem", "0.85rem", "0.9rem"],
-            border_radius="20px",
-            background_color=Color.NAVBAR_BG.value,
-            box_shadow="0 10px 30px rgba(17, 24, 39, 0.18)",
-            border="1px solid rgba(255,255,255,0.08)",
+           # border_radius="20px",
+           #background_color=Color.NAVBAR_BG.value,
+            #box_shadow="0 10px 30px rgba(17, 24, 39, 0.18)",
+            #border="1px solid rgba(255,255,255,0.08)",
         ),
         width="100%",
         padding_x=["0.5rem", "0.75rem", "1rem"],
