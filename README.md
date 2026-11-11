@@ -92,7 +92,7 @@ botón con el icono de luna o sol cambia entre modo oscuro y claro.
 
 En la página Contacto puedes:
 
-1. Abrir un mensaje nuevo a `loretodoris68@gmail.com` con el enlace de correo.
+1. Abrir un mensaje nuevo a `por_mi_email@gmail.com` con el enlace de correo.
    Esto abre la aplicación de correo configurada en tu dispositivo.
 2. Completar el formulario con nombre, correo electrónico y mensaje. Al enviarlo,
    la aplicación remite los datos a Formspree; cuando el envío se completa,
