@@ -17,6 +17,11 @@ e incluye modo claro y oscuro.
   - [Configurar el formulario y el correo](#configurar-el-formulario-y-el-correo)
   - [Estructura del proyecto](#estructura-del-proyecto)
   - [Actualizar el proyecto](#actualizar-el-proyecto)
+  - [🚀 Despliegue en Producción (Sin Reflex Cloud)](#-despliegue-en-producción-sin-reflex-cloud)
+    - [1. Requisitos previos](#1-requisitos-previos)
+    - [2. Generar los archivos estáticos (`build`)](#2-generar-los-archivos-estáticos-build)
+    - [3. Subir los cambios a GitHub](#3-subir-los-cambios-a-github)
+    - [4. Configuración en Vercel](#4-configuración-en-vercel)
   - [Tecnologías](#tecnologías)
 
 ## Requisitos
@@ -189,6 +194,43 @@ Después, inicia o reinicia la aplicación:
 ```powershell
 reflex run
 ```
+## 🚀 Despliegue en Producción (Sin Reflex Cloud)
+
+Este portafolio está construido con **Reflex**, pero se despliega como un sitio web estático gratuito en **Vercel** utilizando **Formspree** para gestionar el formulario de contacto sin necesidad de servidor backend en Python.
+
+### 1. Requisitos previos
+* Tener el proyecto configurado con entorno virtual de Python y Reflex instalado.
+* Contar con una cuenta gratuita en [Formspree](https://formspree.io) (con el *endpoint* configurado en el formulario de contacto).
+* Contar con una cuenta en [GitHub](https://github.com) y [Vercel](https://vercel.com).
+
+### 2. Generar los archivos estáticos (`build`)
+Cada vez que realices cambios en el código Python de tu portafolio y quieras actualizar la web en producción, sigue estos pasos desde la raíz del proyecto:
+
+1. **Exportar el frontend:** Ejecuta el siguiente comando en la terminal con el entorno virtual activado:
+   ```bash
+   reflex export --frontend-only
+   ```
+2. **Extraer el contenido:** Se generará un archivo llamado `frontend.zip`. Descomprime todo su contenido directamente dentro de una carpeta llamada `dist/` en la raíz del proyecto (asegurándote de que `index.html` quede en `dist/index.html`).
+3. **Limpiar el archivo comprimido:** Elimina `frontend.zip` para no subir archivos innecesarios al repositorio.
+
+### 3. Subir los cambios a GitHub
+Asegúrate de que la carpeta `dist/` **no** esté incluida en el archivo `.gitignore`, y sube los cambios al repositorio:
+
+```bash
+git add .
+git commit -m "Actualizar build estatico para produccion"
+git push
+```
+
+### 4. Configuración en Vercel
+Para publicar el proyecto por primera vez en Vercel:
+
+1. Inicia sesión en [Vercel](https://vercel.com) con tu cuenta de GitHub.
+2. Haz clic en **Add New... > Project** e importa este repositorio.
+3. Despliega la sección **Build and Output Settings**:
+   * Activa la opción **Override** en **Output Directory** y escribe: `dist`
+   * Deja el campo **Build Command** vacío.
+4. Haz clic en **Deploy**. A partir de este momento, cada vez que hagas `git push` con la carpeta `dist/` actualizada, Vercel volverá a publicar los cambios automáticamente.
 
 ## Tecnologías
 
