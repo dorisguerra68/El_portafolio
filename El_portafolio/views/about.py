@@ -45,34 +45,59 @@ def about() -> rx.Component:
                     ),
                     rx.vstack(
                         rx.text(
-                            "Desarrolladora Web Full Stack",
-                            **SUBTITLE_STYLE,
+                            "Transformo ideas en soluciones web funcionales, "
+                            "combinando técnica y empatía.",
+                            **{**SUBTITLE_STYLE, "weight": "bold"},
                             color=Color.TEXT_MUTED.value,
-                            font_size=["1.45rem", "1.7rem", "2rem"],
+                            font_size=["1.25rem", "1.45rem", "1.65rem"],
                             padding=Size.SMALL.value,
                         ),
                         rx.text(
                             (
-                                "Soy Doris Guerra, una desarrolladora "
-                                "web Full Stack con pasión por crear "
-                                "experiencias digitales claras, útiles "
-                                "y visualmente atractivas."
+                                "¡Hola! Vivo en Aranjuez (Madrid) y soy "
+                                "Desarrolladora Web Full Stack. Mi camino "
+                                "hasta el mundo del código no ha sido "
+                                "lineal, y ese es precisamente mi mayor "
+                                "valor diferencial: entiendo perfectamente "
+                                "las necesidades reales de las personas."
                             ),
                             color=Color.TEXT_MUTED.value,
-                            font_size=["1rem", "1.15rem", "1.25rem"],
+                            font_size=["1rem", "1.05rem", "1.1rem"],
                             line_height="1.8",
                             max_width="700px",
                             padding=Size.SMALL.value,
                         ),
                         rx.text(
-                            (
-                                "Me especializo en el diseño y desarrollo "
-                                "de soluciones modernas, con atención al "
-                                "detalle, código limpio y una excelente "
-                                "experiencia de usuario."
-                            ),
+                            "Mi trayectoria incluye experiencia "
+                            "internacional entre Venezuela, Italia y "
+                            "España. Antes de dedicarme al desarrollo web, "
+                            "trabajé en administración y atención al "
+                            "paciente, gestioné documentación de forma "
+                            "autónoma, brindé soporte técnico informático "
+                            "a particulares (tras formarme en sistemas "
+                            "microinformáticos) y dediqué años al cuidado "
+                            "de personas mayores y niños, etapa que me "
+                            "enseñó el valor de la paciencia, la escucha "
+                            "activa y el compromiso.",
                             color=Color.TEXT_MUTED.value,
-                            font_size=["1rem", "1.15rem", "1.25rem"],
+                            font_size=["1rem", "1.05rem", "1.1rem"],
+                            line_height="1.8",
+                            max_width="700px",
+                            padding=Size.SMALL.value,
+                        ),
+                        rx.text(
+                            "Tras formarme intensivamente en el bootcamp "
+                            "de ",
+                            rx.text.span("Factoría F5", weight="bold"),
+                            ", hoy ayudo a negocios, profesionales y "
+                            "particulares a construir su presencia digital. "
+                            "Desarrollo páginas y aplicaciones web a medida, "
+                            "cuidando tanto el código como la experiencia "
+                            "del usuario. Si buscas a alguien resolutiva, "
+                            "organizada y con verdadera vocación de servicio "
+                            "para tu próximo proyecto o equipo, ¡hablemos!",
+                            color=Color.TEXT_MUTED.value,
+                            font_size=["1rem", "1.05rem", "1.1rem"],
                             line_height="1.8",
                             max_width="700px",
                             padding=Size.SMALL.value,
